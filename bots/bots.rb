@@ -13,6 +13,23 @@ module Bots
   BOT_DIR = File.expand_path('../', __FILE__)
 
   STATIC_GAME_DEFINITIONS = {
+
+    two_player_leduc: {
+      file: '/home/ian/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/acpc_dealer-2.1.3/vendor/project_acpc_server/leduc.game',
+      text: '2-player Leduc',
+      opponents: {
+        # ADD BOTS HERE LIKE SO:
+        # 'YourAgentNameForDropdownAndLogs' => RunYourAgent
+        # OR:
+        # 'YourAgentNameForDropdownAndLogs' => '/absolute/path/to/my/agent'
+        # OR:
+        # 'YourAgentNameForDropdownAndLogs' => File.join(BOT_DIR, 'path/relative/to/bots/directory')
+        'DeepStack' => '/home/ian/leduc/Source/run.sh',
+        'ExamplePlayer' => '/home/ian/.rbenv/versions/2.0.0-p648/lib/ruby/gems/2.0.0/gems/acpc_dealer-2.1.3/vendor/project_acpc_server/example_player.leduc.nolimit.2p.sh'
+      },
+      num_players: 2
+    },
+
     two_player_fcpa: {
       file: AcpcDealer::GAME_DEFINITION_FILE_PATHS[2][:nolimit],
       text: '2-player FCPA',
